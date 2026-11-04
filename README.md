@@ -18,6 +18,7 @@ For an existing kitt project, add this repository with `kitt remote add kitt-ski
 | [humanizer](skills/humanizer/SKILL.md) | Rewrite AI-sounding prose while preserving facts and meaning, with English and French patterns. |
 | [spec-first](skills/spec-first/SKILL.md) | Turn an analysed coding task into a scoped spec with tests, gates, and a stop condition. |
 | [review](skills/review/SKILL.md) | Independently review a committed diff against its spec before merge. |
+| [skill-create](skills/skill-create/SKILL.md) | Guide a developer through creating a new skill in a skills repository, up to its release. |
 
 The skills work with Claude Code, Codex, Copilot, OpenCode, or another coding agent. They require no private services or project-specific setup.
 
