@@ -86,7 +86,7 @@ This step also runs standalone when the user asks to "release <name>".
 Check the merge request of the branch by name: `gh pr view skill/<name>` or `glab mr view skill/<name>`, or ask the user. If it was closed without merging, say so and stop. If it is not merged, stop.
 
 Run on the default branch of the clone, level with the remote pointing at the chosen repository, on a clean tree:
-1. Run `git switch <default>` and `git pull --ff-only`. If the working tree is dirty, ask before switching.
+1. Run `git switch <default>` and `git pull --ff-only <remote> <default>`, where `<remote>` is the remote pointing at the chosen repository. If the working tree is dirty, ask before switching.
 2. Show the exact command in the proposal and run it only on the user's explicit yes. If that remote is not `origin`, the command is `kitt release --remote <remote> <name>`, because kitt pushes the tag to `origin` by default and would otherwise publish to the fork. Otherwise, run `kitt release <name>`. `kitt release` verifies requirements, then creates and pushes the tag `<name>/v1.0.0`.
 
 Report kitt's error as it is. kitt removes the local tag when the push fails. If the error is a refusal or a permission error, explain that tags may be protected in this repository and someone allowed to publish must run the same command. If it is a network or authentication error, fix that first and retry on the user's yes. Do not work around a refusal.
